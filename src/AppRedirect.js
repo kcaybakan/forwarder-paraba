@@ -3,7 +3,7 @@ import fullLogo from './asset/FullLogo_Transparent.png';
 
 const AppRedirect = () => {
     const [countdown, setCountdown] = useState(3);
-    const [isAppleDevice, setIsAppleDevice] = useState(false); // Apple cihaz olup olmadığını kontrol için state
+    const [isAppleDevice, setIsAppleDevice] = useState(false);
 
     useEffect(() => {
         // Kullanıcının cihazını kontrol et
@@ -14,7 +14,7 @@ const AppRedirect = () => {
         // Eğer Apple cihaz ise geri sayım başlat ve yönlendir
         if (isAppleDevice) {
             const timer = setInterval(() => {
-                setCountdown(prev => prev - 1);
+                setCountdown(prev => (prev > 0 ? prev - 1 : 0)); // Geri sayımı sıfırdan küçük olmamasını sağla
             }, 1000);
 
             const redirectTimeout = setTimeout(() => {
@@ -54,7 +54,7 @@ const AppRedirect = () => {
                 </h1>
             )}
 
-            <p>Eğer otomatik yönlendirilmezseniz, cihazınıza uygun mağazayı açın.</p>
+            <p>Eğer otomatik yönlendirilmezseniz, cihazınıza uygun uygulama mağazasını açın ve Paraba'yı indirin.</p>
         </div>
     );
 };
