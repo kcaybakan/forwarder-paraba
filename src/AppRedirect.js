@@ -37,8 +37,8 @@ const AppRedirect = () => {
                 src={fullLogo}
                 alt="Yükleniyor..."
                 style={{
-                    width: '640px',
-                    height: '320px',
+                    width: '320px',
+                    height: '160px',
                     marginBottom: '20px',
                 }}
             />
