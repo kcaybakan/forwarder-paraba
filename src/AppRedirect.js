@@ -12,6 +12,12 @@ const AppRedirect = () => {
             const iosLink = 'https://apps.apple.com/tr/app/paraba/id6503212871'; // iOS linki
             window.location.href = iosLink;
         }
+        else {
+            setIsAppleDevice(false);
+            // Eğer Apple cihaz ise hemen yönlendir
+            const googlePlayLink = 'https://play.google.com/store/apps/details?id=com.folyafilo.folfafiloaractakip&gl=TR'; // iOS linki
+            window.location.href = googlePlayLink;
+        }
     }, []);
 
     return (
@@ -28,15 +34,10 @@ const AppRedirect = () => {
             />
 
             {/* Altta diğer cihazlar için mesaj */}
-            {isAppleDevice ? (
-                <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginTop: '20px' }}>
-                    Yönlendiriliyorsunuz...
-                </h1>
-            ) : (
-                <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginTop: '20px' }}>
-                    Google Play 10 gün içerisinde aktif olacaktır.
-                </h1>
-            )}
+
+            <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginTop: '20px' }}>
+                Yönlendiriliyorsunuz...
+            </h1>
 
             <p>Eğer otomatik yönlendirilmezseniz, cihazınıza uygun uygulama mağazasını açın ve Paraba'yı indirin.</p>
         </div>
